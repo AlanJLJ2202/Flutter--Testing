@@ -2,16 +2,16 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class ButtonsDynamics extends StatefulWidget{
+class DropDownButton extends StatefulWidget{
 
-  ButtonsDynamics({Key? key}) : super (key: key);
+  DropDownButton({Key? key}) : super (key: key);
 
   @override
-  State<ButtonsDynamics> createState() => _ButtonsDynamicState();
+  State<DropDownButton> createState() => _DropDownButton();
 }
 
 
-class _ButtonsDynamicState extends State<ButtonsDynamics>{
+class _DropDownButton extends State<DropDownButton>{
   initState() {
     super.initState();
 
@@ -43,8 +43,8 @@ class _ButtonsDynamicState extends State<ButtonsDynamics>{
                           setState(() {
                             isVisibleGreen = !isVisibleGreen;
                           });
-                          },
-                        child: Text('green', style: TextStyle(color: Colors.white)),
+                        },
+                        child: const Text('green', style: TextStyle(color: Colors.white)),
                         color: Colors.green,
                       ),
                     ),
@@ -56,7 +56,7 @@ class _ButtonsDynamicState extends State<ButtonsDynamics>{
                           setState(() {
                             isVisibleBlue = !isVisibleBlue;
                           });
-                          },
+                        },
                         child: Text('blue', style: TextStyle(color: Colors.white)),
                         color: Colors.blue,
                       ),
