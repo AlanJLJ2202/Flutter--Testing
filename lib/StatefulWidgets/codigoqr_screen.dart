@@ -18,9 +18,7 @@ class QrWidget extends StatelessWidget {
       backgroundColor: Colors.black,
       body: ListView(
         children: <Widget>[
-
           ContainerLogo(),
-         // ContainerRayas(),
           ContainerQR()
         ],
       ),
@@ -97,7 +95,7 @@ Widget ContainerQR(){
     ),
     child:
     Container(
-      padding: EdgeInsets.only(bottom: 40),
+      padding: const EdgeInsets.only(bottom: 40),
       child: Image.asset("images/qr.png",
         height: 200,
         alignment: Alignment.center,

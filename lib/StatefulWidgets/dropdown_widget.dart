@@ -57,7 +57,7 @@ class _DropDownButton extends State<DropDownButton>{
                             isVisibleBlue = !isVisibleBlue;
                           });
                         },
-                        child: Text('blue', style: TextStyle(color: Colors.white)),
+                        child: const Text('blue', style: TextStyle(color: Colors.white)),
                         color: Colors.blue,
                       ),
                     )
