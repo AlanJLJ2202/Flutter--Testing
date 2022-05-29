@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:testing/StatefulWidgets/codigoqr_screen.dart';
 
 class PrincipalScreen extends StatefulWidget {
   @override
@@ -31,7 +32,7 @@ class _PrincipalScreenState extends State<PrincipalScreen> {
                       Colors.red, 
                       Colors.red.shade300,
                       'Codigo QR', 
-                      () => print('QR'), 
+                      () => Navigator.push(context, MaterialPageRoute(builder: (context) => QrScreen())),
                       Icons.qr_code
                       ),
 

@@ -40,14 +40,14 @@ Widget ContainerLogo(){
         ),
         color: Colors.white
     ),
-    child:
+    /*child:
       Container(
       padding: const EdgeInsets.only(top: 30, bottom: 5),
       child: Image.asset("images/logo.png",
         height: 70,
         alignment: Alignment.center,
       ),
-    ),
+    ),*/
   );
 }
 
