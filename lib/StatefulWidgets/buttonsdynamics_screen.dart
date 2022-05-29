@@ -1,17 +1,17 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class ButtonsDynamics extends StatefulWidget{
+class ButtonsDynamicsScreen extends StatefulWidget{
 
-  ButtonsDynamics({Key? key}) : super (key: key);
+  const ButtonsDynamicsScreen({Key? key}) : super (key: key);
 
   @override
-  State<ButtonsDynamics> createState() => _ButtonsDynamicState();
+  State<ButtonsDynamicsScreen> createState() => _ButtonsDynamicState();
 }
 
 
-class _ButtonsDynamicState extends State<ButtonsDynamics>{
+class _ButtonsDynamicState extends State<ButtonsDynamicsScreen>{
+  @override
   initState() {
     super.initState();
 
@@ -35,31 +35,27 @@ class _ButtonsDynamicState extends State<ButtonsDynamics>{
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Container(
-                      child: RaisedButton(
-                        elevation: 15,
-                        onPressed: (){
-                          print('Hola1');
-                          setState(() {
-                            isVisibleGreen = !isVisibleGreen;
-                          });
-                          },
-                        child: Text('green', style: TextStyle(color: Colors.white)),
-                        color: Colors.green,
-                      ),
+                    RaisedButton(
+                      elevation: 15,
+                      onPressed: (){
+                        print('Hola1');
+                        setState(() {
+                          isVisibleGreen = !isVisibleGreen;
+                        });
+                        },
+                      child: const Text('green', style: TextStyle(color: Colors.white)),
+                      color: Colors.green,
                     ),
-                    Container(
-                      child: RaisedButton(
-                        elevation: 15,
-                        onPressed: (){
-                          print('Hola2');
-                          setState(() {
-                            isVisibleBlue = !isVisibleBlue;
-                          });
-                          },
-                        child: Text('blue', style: TextStyle(color: Colors.white)),
-                        color: Colors.blue,
-                      ),
+                    RaisedButton(
+                      elevation: 15,
+                      onPressed: (){
+                        print('Hola2');
+                        setState(() {
+                          isVisibleBlue = !isVisibleBlue;
+                        });
+                        },
+                      child: Text('blue', style: TextStyle(color: Colors.white)),
+                      color: Colors.blue,
                     )
                   ],
                 ),

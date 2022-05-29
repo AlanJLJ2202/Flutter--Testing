@@ -1,87 +1,56 @@
-import 'dart:ui';
+
 
 import 'package:flutter/material.dart';
 
-class DropDownButton extends StatefulWidget{
-
-  DropDownButton({Key? key}) : super (key: key);
+class DropDownScreen extends StatefulWidget {
+  const DropDownScreen({Key? key}) : super(key: key);
 
   @override
-  State<DropDownButton> createState() => _DropDownButton();
+  State<DropDownScreen> createState() => _DropDownButton();
 }
 
-
-class _DropDownButton extends State<DropDownButton>{
+class _DropDownButton extends State<DropDownScreen> {
+  @override
   initState() {
     super.initState();
-
   }
+
   bool isVisibleGreen = true;
   bool isVisibleBlue = true;
   @override
   Widget build(BuildContext context) {
-
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-
+    String dropdownValue = 'One';
     return Scaffold(
       body: ListView(
         children: [
-          Column(
-            children: [
-              Container(
-                height: height*0.3,
-                color: Colors.red,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      child: RaisedButton(
-                        elevation: 15,
-                        onPressed: (){
-                          print('Hola1');
-                          setState(() {
-                            isVisibleGreen = !isVisibleGreen;
-                          });
-                        },
-                        child: const Text('green', style: TextStyle(color: Colors.white)),
-                        color: Colors.green,
-                      ),
-                    ),
-                    Container(
-                      child: RaisedButton(
-                        elevation: 15,
-                        onPressed: (){
-                          print('Hola2');
-                          setState(() {
-                            isVisibleBlue = !isVisibleBlue;
-                          });
-                        },
-                        child: const Text('blue', style: TextStyle(color: Colors.white)),
-                        color: Colors.blue,
-                      ),
-                    )
-                  ],
+          Column(children: [
+            Center(
+              child: DropdownButton<String>(
+                value: dropdownValue,
+                icon: const Icon(Icons.arrow_downward),
+                elevation: 16,
+                style: const TextStyle(color: Colors.deepPurple),
+                underline: Container(
+                  height: 2,
+                  color: Colors.deepPurpleAccent,
                 ),
+                onChanged: (String? newValue) {
+                  setState(() {
+                    dropdownValue = newValue!;
+                  });
+                },
+                items: <String>['One', 'Two', 'Free', 'Four']
+                    .map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
               ),
-              Visibility(
-                visible: !isVisibleGreen,
-                child: Container(
-                  height: 300,
-                  width: width,
-                  color: Colors.green,
-                ),
-              ),
-              Visibility(
-                visible: !isVisibleBlue,
-                child: Container(
-                  height: 300,
-                  width: width,
-                  color: Colors.blue,
-                ),
-              ),
-            ],
-          )
+            )
+          ])
         ],
       ),
     );

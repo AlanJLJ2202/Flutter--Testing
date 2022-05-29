@@ -4,13 +4,18 @@ import 'package:flutter/material.dart';
 
 
 class QrScreen extends StatelessWidget{
+  const QrScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return QrWidget();
+    return const QrWidget();
   }
 }
 
 class QrWidget extends StatelessWidget {
+
+  const QrWidget({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +23,7 @@ class QrWidget extends StatelessWidget {
       backgroundColor: Colors.black,
       body: ListView(
         children: <Widget>[
-          ContainerLogo(),
+          containerlogo(),
           ContainerQR()
         ],
       ),
@@ -26,28 +31,36 @@ class QrWidget extends StatelessWidget {
   }
 }
 
-Widget ContainerLogo(){
+Widget containerlogo(){
   return Container(
     margin: const EdgeInsets.only(
         top: 175,
         right: 50,
         left: 50
     ),
-    decoration: const BoxDecoration(
-        borderRadius: BorderRadius.only(
+    decoration: BoxDecoration(
+        borderRadius: const BorderRadius.only(
           topRight: Radius.circular(40),
           topLeft: Radius.circular(40),
         ),
-        color: Colors.white
+        color: Colors.grey[800],
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 5,
+            blurRadius: 7,
+            offset: const Offset(0,2),
+          )
+        ],
     ),
-    /*child:
+    child:
       Container(
-      padding: const EdgeInsets.only(top: 30, bottom: 5),
-      child: Image.asset("images/logo.png",
-        height: 70,
+      padding: const EdgeInsets.only(top: 5, bottom: 5),
+      child: Image.asset("assets/images/alan.png",
+        height: 150,
         alignment: Alignment.center,
       ),
-    ),*/
+    ),
   );
 }
 
@@ -64,7 +77,8 @@ Widget ContainerLinea(){
         left: 50
     ),
     decoration: const BoxDecoration(
-        color: Colors.white
+        color: Colors.white,
+        
     ),
     child: Row(
       children: <Widget>[
@@ -77,8 +91,6 @@ Widget ContainerLinea(){
 }
 
 
-
-
 Widget ContainerQR(){
   return Container(
     margin: const EdgeInsets.only(
@@ -86,20 +98,30 @@ Widget ContainerQR(){
         right: 50,
         left: 50
     ),
-    decoration: const BoxDecoration(
-        borderRadius: BorderRadius.only(
+    decoration: BoxDecoration(
+        borderRadius: const BorderRadius.only(
           bottomRight: Radius.circular(40),
           bottomLeft: Radius.circular(40),
         ),
-        color: Colors.white
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 5,
+            blurRadius: 7,
+            offset: const Offset(0,2),
+          )
+        ],
+        color: Colors.grey[800]
     ),
     child:
     Container(
+      height: 250,
+      width: 200,
       padding: const EdgeInsets.only(bottom: 40),
-      child: Image.asset("images/qr.png",
+      /*child: Image.asset("images/qr.png",
         height: 200,
         alignment: Alignment.center,
-      ),
+      ),*/
     ),
   );
 }

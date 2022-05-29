@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:testing/StatefulWidgets/buttonsdynamics_screen.dart';
 import 'package:testing/StatefulWidgets/codigoqr_screen.dart';
+import 'package:testing/StatefulWidgets/dropdown_widget.dart';
 
 class PrincipalScreen extends StatefulWidget {
   @override
@@ -32,7 +34,9 @@ class _PrincipalScreenState extends State<PrincipalScreen> {
                       Colors.red, 
                       Colors.red.shade300,
                       'Codigo QR', 
-                      () => Navigator.push(context, MaterialPageRoute(builder: (context) => QrScreen())),
+                      () => Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => QrScreen())
+                        ),
                       Icons.qr_code
                       ),
 
@@ -40,7 +44,9 @@ class _PrincipalScreenState extends State<PrincipalScreen> {
                       Colors.blue, 
                       Colors.blue.shade300,
                       'Visibility', 
-                      () => print('Visibility'), 
+                      () => Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => ButtonsDynamicsScreen())
+                        ), 
                       Icons.view_agenda
                       ),
 
@@ -48,10 +54,11 @@ class _PrincipalScreenState extends State<PrincipalScreen> {
                       Colors.green, 
                       Colors.green.shade300,
                       'DropDown', 
-                      () => print('Drop'), 
+                      () => Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => DropDownScreen())
+                        ),
                       Icons.list
                       ),
-
                     itemWidget(
                       Colors.yellow, 
                       Colors.yellow.shade300,
