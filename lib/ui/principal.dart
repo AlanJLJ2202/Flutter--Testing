@@ -19,17 +19,41 @@ class _PrincipalScreenState extends State<PrincipalScreen> {
       appBar: AppBar(
           title: const Text('Aplicación de Alan',
               style: TextStyle(color: Colors.white)),
-          backgroundColor: Colors.black),
+          backgroundColor: Colors.grey.shade600),
       body: ListView(
         children: [
           Column(
             children: [
+              Container(
+                height:100,
+                margin: EdgeInsets.only(bottom: 50),
+                child: Row(
+                        children: [
+                          Expanded(
+                            flex: 1,
+                            child: Container(
+                              color: Colors.amber,
+                              child: const Center(child: Text('Logo')),
+                            )
+                            ),
+                            Expanded(
+                              flex: 4,
+                            child: Container(
+                              color: Colors.grey,
+                              child: const Center(child: Text('Alan Jesús Lopez Jacinto')),
+                            )
+                            ),
+                            
+                        ]
+                      ),
+              ),
               Container(
                 margin: EdgeInsets.only(top: 10),
                 child: Wrap(
                   spacing: 30,
                   runSpacing: 30,
                   children: [
+                    
                     itemWidget(
                       Colors.red, 
                       Colors.red.shade300,

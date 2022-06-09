@@ -294,7 +294,7 @@ class _TextField extends StatelessWidget {
                 ),
                 focusedBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
-                    color: Colors.pink.shade400,
+                    color: Colors.green.shade400,
                   ),
                 ),
               ),

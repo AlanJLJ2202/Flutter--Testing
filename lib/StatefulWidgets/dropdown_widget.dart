@@ -22,11 +22,17 @@ class _DropDownButton extends State<DropDownScreen> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     String dropdownValue = 'One';
+    
     return Scaffold(
+      appBar: AppBar(
+        title: Text('DropDown'), 
+        backgroundColor: Colors.grey,
+        elevation: 30,
+        ),
       body: ListView(
         children: [
           Column(children: [
-            Center(
+            Container(
               child: DropdownButton<String>(
                 value: dropdownValue,
                 icon: const Icon(Icons.arrow_downward),

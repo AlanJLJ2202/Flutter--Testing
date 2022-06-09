@@ -25,6 +25,11 @@ class _ButtonsDynamicState extends State<ButtonsDynamicsScreen>{
     double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Visibility'), 
+        backgroundColor: Colors.grey,
+        elevation: 30,
+        ),
       body: ListView(
         children: [
           Column(

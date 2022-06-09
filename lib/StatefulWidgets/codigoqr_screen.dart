@@ -20,6 +20,11 @@ class QrWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Codigo QR'), 
+        backgroundColor: Colors.grey,
+        elevation: 30,
+        ),
       backgroundColor: Colors.black,
       body: ListView(
         children: <Widget>[
