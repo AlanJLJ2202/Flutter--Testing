@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:testing/StatefulWidgets/buttonsdynamics_screen.dart';
 import 'package:testing/StatefulWidgets/codigoqr_screen.dart';
 import 'package:testing/StatefulWidgets/dropdown_widget.dart';
+import 'package:testing/StatefulWidgets/maps_screen.dart';
 
 class PrincipalScreen extends StatefulWidget {
   @override
@@ -16,10 +17,12 @@ class _PrincipalScreenState extends State<PrincipalScreen> {
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
+
       appBar: AppBar(
           title: const Text('Aplicación de Alan',
-              style: TextStyle(color: Colors.white)),
+          style: TextStyle(color: Colors.white)),
           backgroundColor: Colors.grey.shade600),
+
       body: ListView(
         children: [
           Column(
@@ -83,13 +86,25 @@ class _PrincipalScreenState extends State<PrincipalScreen> {
                         ),
                       Icons.list
                       ),
+
                     itemWidget(
                       Colors.yellow, 
                       Colors.yellow.shade300,
                       'Button anim', 
-                      () => print('Button'), 
+                       () => null,
                       Icons.radio_button_on
                       ),
+
+                      itemWidget(
+                        Colors.purple, 
+                      Colors.purple.shade300, 
+                      'Maps', 
+                       () => Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => MapScreen())
+                        ), 
+                      Icons.map),
+
+                    
                   ]
                 ),
               )
